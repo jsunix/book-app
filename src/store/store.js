@@ -39,7 +39,10 @@ export const store = new Vuex.Store({
     },
     setSearchTerm(state, term) {
       state.searchTerm = term;      
-    }
+    },
+    emptyCart(state){
+      state.cart =[];
+    },
   },
   actions: {
     searchBooks({ commit, state }) {
