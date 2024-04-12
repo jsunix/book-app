@@ -26,9 +26,13 @@ export default {
       this.$store.commit('removeFromCart', index);
     },
     purchaseItems() {
-      // Simulate purchase action
-      alert('Items purchased successfully!');
-      this.$store.commit('emptyCart'); // Clear the cart after purchase (assuming you have a mutation for this)
+      if (this.cart.length === 0) {
+        alert('You do not have items in the cart.');
+      } else {
+        // Simulate purchase action
+        alert('Items purchased successfully!');
+        this.$store.commit('emptyCart'); // Clear the cart after purchase
+      }
     },
   },
 };
